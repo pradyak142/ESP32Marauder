@@ -4,7 +4,7 @@
 
   #define configs_h
 
-  #define POLISH_POTATO
+  //#define POLISH_POTATO
 
   //#define DEVELOPER
 
@@ -12,7 +12,7 @@
   //#define MARAUDER_M5STICKC
   //#define MARAUDER_M5STICKCP2
   //#define MARAUDER_MINI
-  //#define MARAUDER_V4
+  #define MARAUDER_V4
   //#define MARAUDER_V6
   //#define MARAUDER_V6_1
   //#define MARAUDER_V7
@@ -34,13 +34,12 @@
   //#define MARAUDER_CARDPUTER_ADV
   //#define MARAUDER_V8
   //#define MARAUDER_MINI_V3
-  //#define MARAUDER_M5_NANO_C6
   //#define DUAL_MINI_C5
   //// END BOARD TARGETS
 
   #define JSON_SETTING_SIZE 2048
 
-  #define MARAUDER_VERSION "v1.12.2"
+  #define MARAUDER_VERSION "v1.12.1"
 
   #define GRAPH_REFRESH   100
 
@@ -107,8 +106,6 @@
     #define HARDWARE_NAME "Marauder Mini v3"
   #elif defined(DUAL_MINI_C5)
     #define HARDWARE_NAME "Dual Mini C5"
-  #elif defined(MARAUDER_M5_NANO_C6)
-    #define HARDWARE_NAME "M5 Nano C6"
   #else
     #define HARDWARE_NAME "ESP32"
   #endif
@@ -238,7 +235,7 @@
     //#define FLIPPER_ZERO_HAT
     #define HAS_BATTERY
     #define HAS_BT
-    //#define HAS_BUTTONS
+    #define HAS_BUTTONS
     #define HAS_NEOPIXEL_LED
     //#define HAS_PWR_MGMT
     #define HAS_SCREEN
@@ -361,7 +358,7 @@
     //#define FLIPPER_ZERO_HAT
     #define HAS_BATTERY
     #define HAS_BT
-    //#define HAS_BUTTONS
+    #define HAS_BUTTONS
     #define HAS_NEOPIXEL_LED
     //#define HAS_PWR_MGMT
     #define HAS_SCREEN
@@ -379,7 +376,7 @@
     //#define FLIPPER_ZERO_HAT
     //#define HAS_BATTERY
     #define HAS_BT
-    //#define HAS_BUTTONS
+    #define HAS_BUTTONS
     //#define HAS_NEOPIXEL_LED
     //#define HAS_PWR_MGMT
     //#define HAS_SCREEN
@@ -394,7 +391,7 @@
     //#define FLIPPER_ZERO_HAT
     //#define HAS_BATTERY
     //#define HAS_BT
-    //#define HAS_BUTTONS
+    #define HAS_BUTTONS
     //#define HAS_NEOPIXEL_LED
     //#define HAS_PWR_MGMT
     //#define HAS_SCREEN
@@ -410,7 +407,7 @@
     //#define FLIPPER_ZERO_HAT
     //#define HAS_BATTERY
     #define HAS_BT
-    //#define HAS_BUTTONS
+    #define HAS_BUTTONS
     //#define HAS_NEOPIXEL_LED
     //#define HAS_PWR_MGMT
     //#define HAS_SCREEN
@@ -425,7 +422,7 @@
     //#define FLIPPER_ZERO_HAT
     //#define HAS_BATTERY
     #define HAS_BT
-    //#define HAS_BUTTONS
+    #define HAS_BUTTONS
     #define HAS_NEOPIXEL_LED
     //#define HAS_PWR_MGMT
     //#define HAS_SCREEN
@@ -441,7 +438,7 @@
     //#define FLIPPER_ZERO_HAT
     //#define HAS_BATTERY
     #define HAS_BT
-    //#define HAS_BUTTONS
+    #define HAS_BUTTONS
     #define HAS_NEOPIXEL_LED
     //#define HAS_PWR_MGMT
     //#define HAS_SCREEN
@@ -457,7 +454,7 @@
     #define FLIPPER_ZERO_HAT
     //#define HAS_BATTERY
     #define HAS_BT
-    //#define HAS_BUTTONS
+    #define HAS_BUTTONS
     //#define HAS_NEOPIXEL_LED
     //#define HAS_PWR_MGMT
     //#define HAS_SCREEN
@@ -471,7 +468,7 @@
     //#define FLIPPER_ZERO_HAT
     //#define HAS_BATTERY
     #define HAS_BT
-    //#define HAS_BUTTONS
+    #define HAS_BUTTONS
     #define HAS_NEOPIXEL_LED
     //#define HAS_PWR_MGMT
     //#define HAS_SCREEN
@@ -492,7 +489,7 @@
     //#define FLIPPER_ZERO_HAT
     #define HAS_BATTERY
     #define HAS_BT
-    //#define HAS_BUTTONS
+    #define HAS_BUTTONS
     //#define HAS_NEOPIXEL_LED
     //#define HAS_PWR_MGMT
     #define HAS_SCREEN
@@ -506,7 +503,6 @@
     //#define HAS_TEMP_SENSOR
     #define HAS_NIMBLE_2
     #define HAS_IDF_3
-    #define HAS_ACT_LED
   #endif
 
   #ifdef MARAUDER_MINI_V3
@@ -531,24 +527,6 @@
     #define HAS_NIMBLE_2
     #define HAS_IDF_3
     //#define HAS_SIMPLEX_DISPLAY
-  #endif
-
-  #if defined(MARAUDER_M5_NANO_C6)
-    //#define FLIPPER_ZERO_HAT
-    //#define HAS_MINI_KB
-    //#define HAS_BATTERY
-    #define HAS_BT
-    //#define HAS_BUTTONS
-    #define HAS_NEOPIXEL_LED
-    //#define HAS_PWR_MGMT
-    //#define HAS_SCREEN
-    //#define HAS_MINI_SCREEN
-    //#define HAS_SD
-    //#define USE_SD
-    //#define HAS_TEMP_SENSOR
-    //#define HAS_GPS
-    #define HAS_NIMBLE_2
-    #define HAS_IDF_3
   #endif
   //// END BOARD FEATURES
 
@@ -811,6 +789,20 @@
       #define C_PULL true
       #define U_PULL true
       #define R_PULL true
+      #define D_PULL true
+    #endif
+
+    #ifdef MARAUDER_V4
+      #define U_BTN 36
+      #define C_BTN 35
+      #define D_BTN 34
+
+      #define HAS_U
+      #define HAS_D
+      #define HAS_C
+
+      #define U_PULL true
+      #define C_PULL true
       #define D_PULL true
     #endif
 
@@ -2495,8 +2487,6 @@
     #define MEM_LOWER_LIM 10000
   #elif defined(MARAUDER_MINI_V3)
     #define MEM_LOWER_LIM 10000
-  #else
-    #define MEM_LOWER_LIM 10000
   #endif
   //// END MEMORY LOWER LIMIT STUFF
 
@@ -2521,8 +2511,6 @@
       #define PIN 27
     #elif defined(MARAUDER_CARDPUTER_ADV)
       #define PIN 21
-    #elif defined(MARAUDER_M5_NANO_C6)
-      #define PIN 20
     #else
       #define PIN 25
     #endif
@@ -2893,14 +2881,4 @@
   #else
     #define HOP_DELAY 250
   #endif
-
-  //// ACT LED STUFF
-  #ifdef HAS_ACT_LED
-
-    #ifdef MARAUDER_V8
-      #define ACT_LED_PIN 28
-    #endif
-
-  #endif
-
 #endif
