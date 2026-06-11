@@ -231,7 +231,7 @@
   #endif
 
   #ifdef MARAUDER_V4
-    #define HAS_TOUCH
+    //#define HAS_TOUCH
     //#define FLIPPER_ZERO_HAT
     #define HAS_BATTERY
     #define HAS_BT
